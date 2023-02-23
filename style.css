@@ -1,0 +1,28 @@
+.container{
+    width: 80%;
+    background-color: lightgray;
+    border: 1px solid red;
+}
+.flexbox{
+    width: 24%;
+    height: 80px;
+    float: left;
+    margin: 10px;
+    border: 1px solid blue;
+}
+.after_flexbox{
+    clear: left;
+    border: 3px solid green;
+}
+
+.flexbox1{
+    width: 400px;
+    height: 100px;
+    border: 1px solid red;
+}
+.flexbox_image{
+    width: 420px;
+    height: 120px;
+    background-image: url(images/xbanner-03.jpg);
+    border: 1px solid blue;
+}
