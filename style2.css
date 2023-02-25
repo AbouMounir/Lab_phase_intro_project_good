@@ -560,9 +560,13 @@ span{
     background-color: white;
     margin: 5% 0px 0px 0px;
     padding: 0px 5% 5% 5%;
+    display: flex;
+    flex-direction: column;
 }
 .jupe_volante img{
-  height: 300px;
+  height: 250px;
+  width: 250px;
+  align-self: center;
 }
 .voir_plus{
   width: 20%;
