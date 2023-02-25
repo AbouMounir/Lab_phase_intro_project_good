@@ -39,6 +39,25 @@ body {
   box-sizing: border-box;
   font-family: 'DM Sans', sans-serif !important;
 }
+.top_arrow{
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  right: 10px;
+  bottom: 25px;
+}
+.top_arrow svg{
+  height: 20px;
+  width: 20px;
+  fill: #1320DC;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 header{
   display: flex;
   flex-direction: column;
@@ -60,7 +79,7 @@ header{
   display: flex;
   justify-content: space-around;
   background-color: #f1f1f1;
-  border-radius: 15px;
+  border-radius: 8px;
 }
 .search_button, .search_item{
   border: none;
@@ -89,6 +108,7 @@ header{
   border-color: var(--blue);
   border-radius: 5px;
   cursor: pointer;
+  transition: all .3s ease-in-out;
 }
 .inscription{
   background-color: #1320DC;
@@ -97,6 +117,14 @@ header{
 .connexion{
   color: #1320DC;
   background-color: white;
+}
+.inscription:hover{
+  color: #1320DC;
+  background-color: white;
+}
+.connexion:hover{
+  background-color: #1320DC;
+  color: white;
 }
 .search_icon, .menu{
   display: none;
@@ -134,14 +162,14 @@ header{
   right: 20px;
   top: 20px ;
 }
-.panier .num{
-  width: 15px;
+.panier .panier_items{
+  width: 20px;
   height: 20px;
   border-radius: 10px;
   background-color: var(--pink);
   position: absolute;
   top : 10px;
-  right: 15px;
+  right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,10 +185,10 @@ header{
   position: relative;
 }
 .body_top_left{
-  width: 50%;
+  width: 45%;
   position: absolute;
   top: 30%;
-  left: 10%;
+  left: 8%;
 }
 .title{
   font-size: 4rem;
@@ -170,10 +198,9 @@ header{
   font-weight: bold;
 }
 .contains{
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
   margin-bottom: 35px;
-  font-weight: bold;
 }
 .buy_button{
   color: white;
@@ -184,6 +211,7 @@ header{
   width: 40%;
   cursor: pointer;
 }
+
 .body_middle{
   height: 30vh;
   display: flex;
@@ -206,7 +234,6 @@ header{
 .man_article, .woman_article, .acc_article{
   width: 30%;
   height: 90%;
-  margin-top: 30px;
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
@@ -256,11 +283,16 @@ header{
   border-bottom: 1px solid var(--text-gray);
   cursor: pointer;
 }
-.new_article{
+.new_article, .new_article p{
   color: #1320DC;
+  position:sticky;
+  top: 20px;
 }
-.top_article{
-  color: #77798C;}
+.top_article, .top_article p{
+  color: #77798C;
+  position:sticky;
+  top: 70px;
+}
 
 .body_bottom_right{
   padding: 0 1% 1.2rem 0;
@@ -283,6 +315,7 @@ header{
     width: 100%;
 }
 .jupe_volante p{
+    font-size: 2.5rem;
     margin-bottom: 2rem;
     font-weight: bold;
 }
@@ -298,6 +331,7 @@ header{
 .button_left, .button_right{
     height: 4rem;
     cursor: pointer;
+    transition: all ease-in-out .3s;
 }
 .button_left{
     background-color: var(--blue);
@@ -318,6 +352,17 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.button_right:hover{
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+.button_left:hover{
+  background-color: white;
+  color: #1320DC;
+  font-weight: bold;
+  border: 2px solid blue;
 }
 .button_left p, .button_right p{
     height: 40%;
@@ -347,6 +392,12 @@ header{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all ease-in-out .3s;
+}
+.voir_plus:hover{
+  background-color: blue;
+  color: white;
+  font-weight: bold;
 }
 .voir_plus p{
     width: 40%;
@@ -360,119 +411,6 @@ footer{
 span{
   color: #1320DC;
 }
-
-@media screen and (max-width:1000px){
-  .links{
-    display: none;
-  }
-  .search{
-    display: none;
-  }
-  .liste_deroulante{
-    display: none;
-  }
-  .header_bottom{
-    display: none;
-  }
-  .header_top{
-    height: 80px;
-    border-bottom: none;
-    margin-left: 20vh;
-    margin-right: 20vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .search_icon, .menu{
-    width: 20px;
-    height: 20px;
-    display: inline-flex;
-    margin-bottom: 2.5px;
-  }
-  .connexion{
-    margin-right: 5px;
-  }
-  .inscription{
-    margin-right: 35px;
-  }
-  .header_top_right{
-    display: flex;
-    align-items: end;
-  }
-  .body_top{
-    margin-top: 0px;
-    background-image: url(icones/Groupe-45.png);
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
-    height: 80vh;
-  }
-  .body_top_left{
-    width: 700px;
-  }
-  .body_middle{
-    height: 50vh;
-    padding: 0px 50px 0px 50px;
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .man_article, .woman_article, .acc_article{
-    width: 40%;
-    height: 60%;
-    margin-top: 30px;
-    background-size: contain;
-  }
-  .body_bottom{
-    display: block;
-    margin-top: 250px;
-  }
-  .filtre{
-    display: flex;
-    background-color: lightgray;
-    width: 100%;
-    height: 60px;
-    border-radius: 5px;
-    margin-left: 1rem;
-    margin-bottom: 1.2rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  .filtre P{
-    background-color: #fff;
-    font-weight: bold;
-    height: 100%;
-    width: 120px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .body_bottom_left{
-    display: none;
-  }
-  .body_bottom_right{
-    padding: 5% 8% 2% 8%;
-    width: 100%;
-    background-color: #d3d3d3;
-  }
-  .part1, .part2, .part3{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0px;
-  }
-  .jupe_volante{
-    width: 45%;
-    border-radius: 5px;
-    background-color: white;
-    margin-top: 1.2rem;
-    margin-left: 1.2rem;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-}
-}
-
 
 @media screen and (max-width:575px){
   .links{
@@ -490,40 +428,59 @@ span{
   .header_top{
     height: 80px;
     border-bottom: none;
-    margin-left: 5%;
-    margin-right: 5%;
+    padding: 0px 10px 0px 10px;
+    margin: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  .logo{
+    height: 25%;
+  }
+  .logo img{
+    height: 100%;
+  }
   .search_icon, .menu{
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
     display: inline-flex;
-    margin-bottom: 2.5px;
+    margin: 0px 5px 0px 5px;
+  }
+  .connexion, .inscription{
+    width: 70px;
+    height: 80%;
   }
   .connexion{
     margin-right: 5px;
   }
   .inscription{
-    margin-right: 35px;
+    margin-right: 25px;
   }
   .header_top_right{
     display: flex;
-    align-items: end;
+    align-items: center;
   }
   .body_top{
     margin-top: 0px;
     background-image: url(icones/Groupe-45.png);
     background-repeat: no-repeat;
-    height: 80vh;
+    background-position: 100% 100%;
+    fill : red ;
+    height: 60vh;
     width: 100%;
   }
   .body_top_left{
-    width: 80%;
+    height: 50%;
+    width: 90%;
     position: absolute;
     top: 20%;
-    left: 10%;
+    left: 5%;
+  }
+  .title{
+    font-size: 2.5rem;
+  }
+  .contains{
+    font-size: 1.5rem;
   }
   .body_middle{
     height: 90vh;
@@ -573,14 +530,18 @@ span{
     width: 120px;
     height: 60px;
     border-radius: 5px;
-    margin-left: 3.8rem;
-    margin-bottom: 1.2rem;
+    margin: 0px;
     display: flex;
     justify-content: center;
+    padding-right: 20px;
     align-items: center;
   }
   .filtre P{
     font-weight: bold;
+  }
+  .filtre svg{
+    width: 40%;
+    height: 40%;
   }
   .body_bottom_left{
     display: none;
@@ -595,11 +556,13 @@ span{
   }
   .jupe_volante{
     width: 98%;
-    height: 485px;
     border-radius: 5px;
     background-color: white;
     margin: 5% 0px 0px 0px;
     padding: 0px 5% 5% 5%;
+}
+.jupe_volante img{
+  height: 300px;
 }
 .voir_plus{
   width: 20%;
